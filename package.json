@@ -14,8 +14,8 @@
     "ws": "^4.0.0"
   },
   "scripts": {
-    "start": "react-scripts start && node server.js --prefix server",
-    "build": "react-scripts buxild",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
