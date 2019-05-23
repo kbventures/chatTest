@@ -2,7 +2,7 @@ import * as types from '../constants/ActionTypes';
 import { addUser, messageReceived, populateUsersList } from '../actions';
 
 const setupSocket = (dispatch, username) => {
-  const socket = new WebSocket('ws://boiling-brook-76849.herokuapp.com');
+  const socket = new WebSocket('ws://sheltered-refuge-60413.herokuapp.com');
   //const socket = new WebSocket('wss://boiling-brook-76849.herokuapp.com');
   //const HOST = location.origin.replace(/^http/, 'ws');
   //const socket = new WebSocket(HOST);
