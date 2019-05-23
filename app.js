@@ -1,4 +1,4 @@
-/*
+//*
 const WebSocket = require('ws');
 
 const port = process.env.PORT || 8989;
