@@ -1,10 +1,11 @@
+/*/
 const WebSocket = require('ws');
 
 const port = process.env.PORT || 8989;
 
 const wss = new WebSocket.Server({ port });
+*/
 
-/*
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
@@ -17,7 +18,7 @@ const wss = new WebSocket.Server({
 });
 
 httpServer.listen(port);
-*/
+
 const users = [];
 
 const broadcast = (data, ws) => {
