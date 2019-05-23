@@ -6,7 +6,7 @@ const setupSocket = (dispatch, username) => {
   const socket = new WebSocket('wss://sheltered-refuge-60413.herokuapp.com');
   //const socket = new WebSocket('wss://boiling-brook-76849.herokuapp.com');
   //const HOST = location.origin.replace(/^http/, 'ws');
-  //const socket = new WebSocket(HOST);.
+  //const socket = new WebSocket(HOST);..
 
   socket.onopen = () => {
     socket.send(
