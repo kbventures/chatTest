@@ -9,6 +9,7 @@ const wss = new WebSocket.Server({ port });
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
+const path = require('path');
 
 const app = express();
 
@@ -21,24 +22,15 @@ const wss = new WebSocket.Server({
 });
 
 //app.use(express.static(__dirname));
-/*
+
 if (process.env.NODE_ENV === 'production') {
   //Set static folder
-  app.use(express.static('client/build'));
+  app.use(express.static('build'));
 
   //// The "catchall" handler: for any request that doesn't
   // match one above, send back React's index.html file.
   app.get('*', (req, res) => {
-    res.sendfile(path.resolve(_dirname, 'client', 'build', 'index.html'));
-  });
-}
-*/
-
-if (process.env.NODE_ENV === 'production') {
-  //// The "catchall" handler: for any request that doesn't
-  // match one above, send back React's index.html file.
-  app.get('*', (req, res) => {
-    res.sendfile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+    res.sendfile(path.resolve(_dirname, 'build', 'index.html'));
   });
 }
 
