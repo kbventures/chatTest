@@ -34,7 +34,13 @@ if (process.env.NODE_ENV === 'production') {
 }
 */
 
-app.use(express.static(__dirname + '/public'));
+if (process.env.NODE_ENV === 'production') {
+  //// The "catchall" handler: for any request that doesn't
+  // match one above, send back React's index.html file.
+  app.get('*', (req, res) => {
+    res.sendfile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 httpServer.listen(PORT, () => console.log('Server connected on port ' + PORT));
 
