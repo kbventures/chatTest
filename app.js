@@ -10,14 +10,33 @@ const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
 
-const port = process.env.PORT || 8080;
 const app = express();
+
 const httpServer = http.createServer(app);
+
+const PORT = process.env.PORT || 8080;
+
 const wss = new WebSocket.Server({
   server: httpServer
 });
 
-httpServer.listen(port);
+//app.use(express.static(__dirname));
+/*
+if (process.env.NODE_ENV === 'production') {
+  //Set static folder
+  app.use(express.static('client/build'));
+
+  //// The "catchall" handler: for any request that doesn't
+  // match one above, send back React's index.html file.
+  app.get('*', (req, res) => {
+    res.sendfile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+  });
+}
+*/
+
+app.use(express.static(__dirname + '/public'));
+
+httpServer.listen(PORT, () => console.log('Server connected on port ' + PORT));
 
 const users = [];
 
